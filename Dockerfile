@@ -1,15 +1,6 @@
-# https://docs.docker.com/engine/reference/builder/#arg
-# @remark Please never modify it, the auto/release.sh will update it automatically.
-ARG tag=v3.0-b4
-ARG url=https://gitee.com/winlinvip/srs.oschina.git
-
-############################################################
-# build
-############################################################
-ARG repo=registry.cn-hangzhou.aliyuncs.com/ossrs/srs:dev
-FROM ${repo} AS build
-ARG tag
-ARG url
+FROM ossrs/srs:dev AS build
+ARG tag=3.0release
+ARG url=https://github.com/mycujoo/srs.git
 # Install required tools.
 RUN yum install -y gcc make gcc-c++ patch unzip perl git
 RUN cd /tmp && git clone --depth=1 --branch ${tag} ${url} srs
