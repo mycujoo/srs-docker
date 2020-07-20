@@ -1,5 +1,5 @@
 FROM ossrs/srs:dev AS build
-ARG tag=v3.1
+ARG tag=v3.2
 ARG url=https://github.com/mycujoo/srs.git
 # Install required tools.
 RUN yum install -y gcc make gcc-c++ patch unzip perl git
